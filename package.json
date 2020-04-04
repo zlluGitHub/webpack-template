@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "dev": "webpack-dev-server --open --port 3000 --contentBase src --hot"
   },
   "author": "",
   "license": "ISC",
