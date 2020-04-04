@@ -1,5 +1,6 @@
 
 const path = require('path');
+const webpack = require('webpack');   //导入webpack模块
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -58,6 +59,7 @@ module.exports = {
 
     //插件
     plugins: [
+        // new webpack.HotModuleReplacementPlugin(), //热更新
         new MiniCssExtractPlugin({
             filename: "css/[name].min.css",
             // filename: "css/[chunkhash:12].[name].css",
@@ -70,5 +72,9 @@ module.exports = {
             template: 'src/index.html' // 我们原来的index.html路径，作为模板
         })
     ],
-    mode: 'production' // 设置 development、production、none
+    mode: 'production', // 设置 development、production、none
+    // devServer: {
+    //     "publicPath": './',
+    //     "port": 3000
+    // }
 };
